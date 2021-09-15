@@ -1,0 +1,7 @@
+Question 1:
+Documentation: https://tech.microbit.org/
+
+Question 2:
+Mu Editor
+
+Question 3:
