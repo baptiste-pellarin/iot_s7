@@ -1,16 +1,14 @@
 import radio
-from microbit import display, sleep, temperature
-
-"""
-Master (delta temp)
-"""
+from microbit import display, temperature, button_a
 
 radio.config(channel=69, address=0x75626969)
 radio.on()
 
 while True:
 
-    sleep(500)
+    if button_a.was_pressed():
+        radio.send('C'+str(temperature()))
+        print('temperature envoyée')
 
     incoming = radio.receive()
     if incoming and incoming[0] == "C":
